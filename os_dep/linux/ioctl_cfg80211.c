@@ -3267,7 +3267,7 @@ exit:
 	return ret;
 }
 
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 14, 0))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 17, 0))
 static int cfg80211_rtw_set_wiphy_params(struct wiphy *wiphy, int radio_idx, u32 changed)
 #else
 static int cfg80211_rtw_set_wiphy_params(struct wiphy *wiphy, u32 changed)
@@ -4164,7 +4164,7 @@ static int cfg80211_rtw_set_txpower(struct wiphy *wiphy,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 8, 0))
 	struct wireless_dev *wdev,
 #endif
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 14, 0))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 17, 0))
 	int radio_idx,
 #endif
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 36)) || defined(COMPAT_KERNEL_RELEASE)
@@ -4231,8 +4231,10 @@ static int cfg80211_rtw_get_txpower(struct wiphy *wiphy,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 8, 0))
 	struct wireless_dev *wdev,
 #endif
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 14, 0))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 17, 0))
 	int radio_idx,
+#endif
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 14, 0))
 	unsigned int link_id,
 #endif
 	int *dbm)
